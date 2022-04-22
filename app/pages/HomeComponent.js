@@ -1,29 +1,53 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-
-const image = { uri: 'https://simply-delicious-food.com/wp-content/uploads/2016/08/Hash-brown-cheeseburgers-2.jpg' };
+import { TouchableOpacity, StyleSheet, Text, View} from 'react-native';
+// rnf
 
 const HomeComponent = () => {
   return (
     <div>
       <View style={styles.container}>
-          <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-          <Text> hello dear</Text>
-          </ImageBackground>
-      </View>
+        <Text style={styles.text}> Yummy Food! </Text>
+        <Text style={styles.text}> Testy Food </Text>
+        <TouchableOpacity
+        style={styles.button}
+        onPress={()=> console.log('hey')}>
+        <Text>Login</Text>
+        </TouchableOpacity>
+        </View>
     </div>
   );
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'pink',
         alignItems: 'center',
         justifyContent: 'center',
+        position: 'absolute',
+        top: '40%',
+        left: 0,
+        right: '10', 
+        bottom: 0
     },
-    image: {
-        flex: 1,
+    text: {
+        color: 'white',
+        fontSize: 35,
+        lineHeight: 44,
+        fontWeight: 'bold',
+        textAlign: 'left',
+        // backgroundColor: '#000000c0',
+    },
+    button:{
+        alignItems: 'center',
         justifyContent: 'center',
-    },
+        paddingVertical: 12,
+        paddingHorizontal: 60,
+        borderRadius: 7,
+        backgroundColor: 'pink',
+        top: '20px',
+        left: 60,
+        right: 50, 
+        bottom: 0,
+    }
+
 })
 export default HomeComponent;
