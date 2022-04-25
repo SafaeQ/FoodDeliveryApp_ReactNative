@@ -5,7 +5,7 @@ import  HomeComponent  from "./pages/HomeComponent";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image source={require('./images/food.jpg')} style={styles.image}/>
+      <Image source={require('./images/Portobello.png')} style={styles.image}/>
       <HomeComponent/>
       <StatusBar style="auto" />
     </View>
@@ -23,7 +23,4 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
 },
-  home: {
-    position:'absolute'
-  }
 });

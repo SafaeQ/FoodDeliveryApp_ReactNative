@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet, Text, View} from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View, Button} from 'react-native';
+import * as Linking from 'expo-linking';
 // rnf
 
 const HomeComponent = () => {
@@ -13,9 +14,15 @@ const HomeComponent = () => {
         onPress={()=> console.log('hey')}>
         <Text>Login</Text>
         </TouchableOpacity>
+        <Text>Don't have an account?</Text>
+        <Button tilte= "Sign up " onPress={_handleOpenWithLinking}/>
         </View>
     </div>
   );
+
+  function _handleOpenWithLinking (){
+    Linking.openURL('https://expo.dev');
+  }
 }
 const styles = StyleSheet.create({
     container: {
@@ -23,7 +30,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
-        top: '40%',
+        top: '43%',
         left: 0,
         right: '10', 
         bottom: 0
@@ -34,7 +41,6 @@ const styles = StyleSheet.create({
         lineHeight: 44,
         fontWeight: 'bold',
         textAlign: 'left',
-        // backgroundColor: '#000000c0',
     },
     button:{
         alignItems: 'center',
@@ -43,7 +49,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 60,
         borderRadius: 7,
         backgroundColor: 'pink',
-        top: '20px',
+        top: 55,
         left: 60,
         right: 50, 
         bottom: 0,
