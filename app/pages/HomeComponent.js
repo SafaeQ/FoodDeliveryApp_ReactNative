@@ -5,21 +5,25 @@ import * as Linking from 'expo-linking';
 
 const HomeComponent = () => {
   return (
-    <div>
+    <>
       <View style={styles.container}>
+
         <Text style={styles.text}> Yummy Food! </Text>
         <Text style={styles.text}> Testy Food </Text>
-        <TouchableOpacity
-        style={styles.button}
-        onPress={()=> console.log('hey')}>
-        <Text>Login</Text>
+
+        <TouchableOpacity style={styles.button}  onPress={()=> console.log('hey')}>
+          <Text>Login</Text>
         </TouchableOpacity>
-            <View style= {styles.footer}>
-                <Text>Don't have an account?</Text>
-                <Button title='Sign up' onPress={_handleOpenWithLinking}> Sign up </Button>
-            </View>
+
+        <View style= {styles.footer}>
+            <Text style= {styles.textBottum}>Don't have an account?</Text>
+            <TouchableOpacity  onPress={_handleOpenWithLinking}>
+              <Text style= {styles.textBottum}>  Sign Up</Text>
+            </TouchableOpacity>  
         </View>
-    </div>
+
+        </View>
+    </>
   );
 
   function _handleOpenWithLinking (){
@@ -37,6 +41,7 @@ const styles = StyleSheet.create({
         right: '10', 
         bottom: 0
     },
+    
     text: {
         color: 'white',
         fontSize: 35,
@@ -57,7 +62,6 @@ const styles = StyleSheet.create({
         bottom: 0,
     },
     footer: {
-        // flex: 1,
         flexDirection: 'row',
         alignContent: 'center',
         justifyContent: 'Space-between',
@@ -65,14 +69,11 @@ const styles = StyleSheet.create({
         position: 'relative',
         bottom: 0,
         top: 78,
-        left: 43,
+        left: 60,
         color: 'white'
     },
-    // button1: {
-    //     width: 49,
-    //     height: 25,
-    //     backgroundColor: 'mistyrose',
-    // }
-
+    textBottum: {
+      color: 'white' 
+    }
 })
 export default HomeComponent
