@@ -11,7 +11,7 @@ const HomeComponent = () => {
         <Text style={styles.text}> Yummy Food! </Text>
         <Text style={styles.text}> Testy Food </Text>
 
-        <TouchableOpacity style={styles.button}  onPress={()=> console.log('hey')}>
+        <TouchableOpacity style={styles.button}  onPress={_openLoginScreen}>
           <Text>Login</Text>
         </TouchableOpacity>
 
@@ -28,6 +28,9 @@ const HomeComponent = () => {
 
   function _handleOpenWithLinking (){
     Linking.openURL('https://expo.dev');
+  }
+  function _openLoginScreen (){
+    Linking.openURL('./LoginComponent.js');
   }
 }
 const styles = StyleSheet.create({
