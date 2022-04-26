@@ -16,7 +16,7 @@ const HomeComponent = () => {
         </TouchableOpacity>
             <View style= {styles.footer}>
                 <Text>Don't have an account?</Text>
-                <Button style= {styles.button1} onPress={_handleOpenWithLinking}> Sign up </Button>
+                <Button title='Sign up' onPress={_handleOpenWithLinking}> Sign up </Button>
             </View>
         </View>
     </div>
