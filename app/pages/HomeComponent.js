@@ -14,8 +14,10 @@ const HomeComponent = () => {
         onPress={()=> console.log('hey')}>
         <Text>Login</Text>
         </TouchableOpacity>
-        <Text>Don't have an account?</Text>
-        <Button tilte= "Sign up " onPress={_handleOpenWithLinking}/>
+            <View style= {styles.footer}>
+                <Text>Don't have an account?</Text>
+                <Button style= {styles.button1} onPress={_handleOpenWithLinking}> Sign up </Button>
+            </View>
         </View>
     </div>
   );
@@ -53,7 +55,24 @@ const styles = StyleSheet.create({
         left: 60,
         right: 50, 
         bottom: 0,
-    }
+    },
+    footer: {
+        // flex: 1,
+        flexDirection: 'row',
+        alignContent: 'center',
+        justifyContent: 'Space-between',
+        alignItems: 'center',
+        position: 'relative',
+        bottom: 0,
+        top: 78,
+        left: 43,
+        color: 'white'
+    },
+    // button1: {
+    //     width: 49,
+    //     height: 25,
+    //     backgroundColor: 'mistyrose',
+    // }
 
 })
-export default HomeComponent;
+export default HomeComponent
