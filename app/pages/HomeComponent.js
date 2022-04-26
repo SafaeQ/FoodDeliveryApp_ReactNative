@@ -11,14 +11,14 @@ const HomeComponent = () => {
         <Text style={styles.text}> Yummy Food! </Text>
         <Text style={styles.text}> Testy Food </Text>
 
-        <TouchableOpacity style={styles.button}  onPress={_openLoginScreen}>
+        <TouchableOpacity style={styles.button}  onPress={(_openLoginScreen)}>
           <Text>Login</Text>
         </TouchableOpacity>
 
         <View style= {styles.footer}>
             <Text style= {styles.textBottum}>Don't have an account?</Text>
             <TouchableOpacity  onPress={_handleOpenWithLinking}>
-              <Link ><Text style= {styles.textBottum}>  Sign Up</Text></Link>
+              <Text style= {styles.textBottum}>  Sign Up</Text>
             </TouchableOpacity>  
         </View>
 
@@ -30,7 +30,7 @@ const HomeComponent = () => {
     Linking.openURL('https://expo.dev');
   }
   function _openLoginScreen (){
-    Linking.openURL('./LoginComponent.js');
+    navigation.navigartor('Login')
   }
 }
 const styles = StyleSheet.create({
