@@ -3,7 +3,7 @@ import { TouchableOpacity, StyleSheet, Text, View, Button} from 'react-native';
 import * as Linking from 'expo-linking';
 // rnf
 
-const HomeComponent = () => {
+const HomeComponent = ({navigation}) => {
   return (
     <>
       <View style={styles.container}>
@@ -11,7 +11,7 @@ const HomeComponent = () => {
         <Text style={styles.text}> Yummy Food! </Text>
         <Text style={styles.text}> Testy Food </Text>
 
-        <TouchableOpacity style={styles.button}  onPress={(_openLoginScreen)}>
+        <TouchableOpacity style={styles.button}  onPress={()=> navigation.navigate('Login')}>
           <Text>Login</Text>
         </TouchableOpacity>
 
@@ -29,9 +29,7 @@ const HomeComponent = () => {
   function _handleOpenWithLinking (){
     Linking.openURL('https://expo.dev');
   }
-  function _openLoginScreen (){
-    navigation.navigartor('Login')
-  }
+  
 }
 const styles = StyleSheet.create({
     container: {

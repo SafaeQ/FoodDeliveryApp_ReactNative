@@ -12,14 +12,11 @@ const Login = ()=> {
         />
         <TextInput
           placeholder={'Password'}
-          secureTextEntry={true}
           style={styles.input}
         />
         
         <Button
           title={'Login'}
-          style={styles.input}
-          onPress={this.onLogin.bind(this)}
         />
       </View>
     );
