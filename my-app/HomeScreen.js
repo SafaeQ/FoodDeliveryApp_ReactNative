@@ -7,13 +7,19 @@ function HomeScreen() {
       <>  
         <ImageBackground
         source={require('./assets/images/HAMBÚRGUER.jpg')}
-        resizeMode="cover"
+         resizeMode="contain"
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
       >
       </ImageBackground >
+
+      <View style= {styles.textContainer}>
+      <Text style={styles.text}> Food Queen</Text>
+      <Text style={{ fontSize: 22, marginTop:20, textAlign: 'center' }}> Food fdfdfgfdg dsgfgdfg fgfdg ete </Text>
+      </View>
+
       <View style={styles.buttonInnerContainer} >
-      <PrimaryButton children= {'heyy'}/>
+      <PrimaryButton children= {'Login'}/>
       </View>
     </>
   );
@@ -28,14 +34,5 @@ const styles = StyleSheet.create({
   backgroundImage: {
     opacity: 1,
   },
-  buttonInnerContainer: {
-    // backgroundColor: 'pink',
-    // paddingVertical: 8,
-    // paddingHorizontal: 16,
-    // elevation: 2,
-    position: 'absolute',
-    top: '35em',
-    left: '6em',
-    width: '11em',
-  },
+
 });
