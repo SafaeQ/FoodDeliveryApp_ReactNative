@@ -4,6 +4,9 @@ const Colors = {
     primary700: '#4e0329',
     primary800: '#3b021f',
     accent500: '#ddb52f'
-  };
-  
-  export default Colors;
+};
+
+export default Colors;
+
+
+//   colors={[Colors.primary700, Colors.accent500]}
