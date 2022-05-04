@@ -1,14 +1,11 @@
 import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+// import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 // import Colors from './constants/colors';
 
 export default function App() {
   return (
-    <LinearGradient
-      style={styles.rootScreen}
-    >
       <ImageBackground
         source={require('./assets/images/HAMBÚRGUER.jpg')}
         resizeMode="cover"
@@ -16,7 +13,7 @@ export default function App() {
         imageStyle={styles.backgroundImage}
       >
       </ImageBackground>
-    </LinearGradient>
+    
   );
 }
 
