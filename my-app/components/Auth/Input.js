@@ -32,7 +32,7 @@ export default Input;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    marginVertical: 8,
+    // marginVertical: 8,
   },
   label: {
     color: 'balck',

@@ -10,11 +10,23 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
     <View style={styles.form}>
       <View>
         <Input
-          label="Email Address"
+          label="Name"
+          keyboardType="email-address"
+        />
+        <Input
+          label="Email"
           keyboardType="email-address"
         />
         <Input
           label="Password"
+          secure
+        />
+        <Input
+          label="Address"
+          secure
+        />
+        <Input
+          label="Number"
           secure
         />
         <View style={styles.buttons}>
