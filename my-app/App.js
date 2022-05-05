@@ -1,16 +1,18 @@
-import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
-// import { LinearGradient } from 'expo-linear-gradient';
-import { useFonts } from 'expo-font';
-import AppLoading from 'expo-app-loading';
-import PrimaryButton from './components/button';
-import HomeScreen from './HomeScreen';
-// import Colors from './constants/colors';
+import { StyleSheet, SafeAreaView } from 'react-native';
+// import { NavigationContainer } from '@react-navigation/native';
+import HomeScreen from './screens/HomeScreen'
+
+// const Stack = createStackNavigator()
 
 export default function App() {
   return (
     <>
-      
-      <HomeScreen />
+      {/* <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
+      </NavigationContainer> */}
+      <HomeScreen/>
     </>
     
   );

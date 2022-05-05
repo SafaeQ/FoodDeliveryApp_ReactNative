@@ -1,12 +1,12 @@
 import { View, Text, StyleSheet, ImageBackground } from 'react-native';
-import PrimaryButton from './components/button';
+import PrimaryButton from '../components/button';
 
 
 function HomeScreen() {
   return (
       <>  
         <ImageBackground
-        source={require('./assets/images/burger-fre.png')}
+        source={require('../assets/images/téléchargement.jpg')}
          resizeMode="contain"
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
@@ -22,7 +22,7 @@ function HomeScreen() {
 
       <View style={styles.buttonInnerContainer} >
       <PrimaryButton onPress={() => navigation.navigate('Login')} title= {'Login'}/>
-      <PrimaryButton onPress={() => navigation.navigate('Signup')} title= {'Sign Up'}/>
+      <PrimaryButton onPress={() => console.log('clicked')} title= {'Sign Up'}/>
       </View>
     </>
   );
