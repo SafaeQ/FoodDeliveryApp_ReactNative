@@ -9,7 +9,8 @@ import { View,
   KeyboardAvoidingView} from 'react-native';
 
 import { Ionicons } from "@expo/vector-icons";
-import { basic, form, colors } from "../constants/style";
+import { basic, form } from "../constants/style";
+
 
 function SignupScreen({navigation}) {
 

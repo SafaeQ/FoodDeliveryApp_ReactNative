@@ -1,13 +1,9 @@
 import { StyleSheet } from "react-native";
+import colors from "../constants/colors";
 
-export const colors = {
-  primary: "#fff",
-  secondary: "#adadad",
-  tertiary: "#057afd",
-  alternative: "#666",
-  fb: "#39559f",
-  disabled: "rgba(5, 122, 253, 0.5)"
-};
+// export const colors = {
+ 
+// };
 
 export const basic = StyleSheet.create({
   container: {
@@ -31,7 +27,8 @@ export const form = StyleSheet.create({
   heading: {
     fontSize: 32,
     fontWeight: "bold",
-    paddingTop: 0
+    paddingTop: 0, 
+    textAlign: 'center'
   },
   label: {
     color: colors.secondary
@@ -62,7 +59,7 @@ export const form = StyleSheet.create({
   button: {
     borderRadius: 5,
     alignContent: "center",
-    backgroundColor: colors.tertiary,
+    backgroundColor: colors.accent500,
     padding: 15
   },
   disabled: {
