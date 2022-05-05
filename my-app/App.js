@@ -1,6 +1,7 @@
 import { StyleSheet, SafeAreaView } from 'react-native';
 // import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen'
+import SignupScreen from './screens/SignUpScreen';
 
 // const Stack = createStackNavigator()
 
@@ -12,7 +13,8 @@ export default function App() {
           <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer> */}
-      <HomeScreen/>
+      {/* <HomeScreen/> */}
+      <SignupScreen/>
     </>
     
   );

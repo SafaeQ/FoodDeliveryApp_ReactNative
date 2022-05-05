@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
 
 import PrimaryButton from '../../components/button'
 import AuthForm from './AuthForm';
-import { Colors } from '../../constants/styles';
+import  Colors  from '../../constants/colors';
 
 function AuthContent({ isLogin, onAuthenticate }) {
-  const navigation = useNavigation();
+//   const navigation = useNavigation();
 
-  const [credentialsInvalid, setCredentialsInvalid] = useState({
+  const [User, setUser] = useState({
     email: false,
     password: false,
     confirmEmail: false,
@@ -18,9 +18,9 @@ function AuthContent({ isLogin, onAuthenticate }) {
 
   function switchAuthModeHandler() {
     if (isLogin) {
-      navigation.replace('Signup');
+    //   navigation.replace('Signup');
     } else {
-      navigation.replace('Login');
+    //   navigation.replace('Login');
     }
   }
 
@@ -41,7 +41,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
       (!isLogin && (!emailsAreEqual || !passwordsAreEqual))
     ) {
       Alert.alert('Invalid input', 'Please check your entered credentials.');
-      setCredentialsInvalid({
+      setUser({
         email: !emailIsValid,
         confirmEmail: !emailIsValid || !emailsAreEqual,
         password: !passwordIsValid,
@@ -57,7 +57,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
       <AuthForm
         isLogin={isLogin}
         onSubmit={submitHandler}
-        credentialsInvalid={credentialsInvalid}
+        User={User}
       />
       <View style={styles.buttons}>
         <PrimaryButton onPress={switchAuthModeHandler}>
