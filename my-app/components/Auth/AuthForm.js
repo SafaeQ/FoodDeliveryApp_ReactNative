@@ -11,17 +11,11 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
       <View>
         <Input
           label="Email Address"
-          // onUpdateValue={updateInputValueHandler.bind(this, 'email')}
-          // value={enteredEmail}
           keyboardType="email-address"
-          // isInvalid={emailIsInvalid}
         />
         <Input
           label="Password"
-          // onUpdateValue={updateInputValueHandler.bind(this, 'password')}
           secure
-          // value={enteredPassword}
-          // isInvalid={passwordIsInvalid}
         />
         <View style={styles.buttons}>
           <PrimaryButton title={'Signup'} onPress={()=> {console.log('clicked');}} />
@@ -35,6 +29,8 @@ export default AuthForm;
 
 const styles = StyleSheet.create({
   buttons: {
-    marginTop: 12,
+    marginTop: 20,
+    marginLeft: 84,
+    marginRight: 81,
   },
 });
