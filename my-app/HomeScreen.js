@@ -6,7 +6,7 @@ function HomeScreen() {
   return (
       <>  
         <ImageBackground
-        source={require('./assets/images/HAMBÚRGUER.jpg')}
+        source={require('./assets/images/burger-fre.png')}
          resizeMode="contain"
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
@@ -14,12 +14,14 @@ function HomeScreen() {
       </ImageBackground >
 
       <View style= {styles.textContainer}>
-      <Text style={styles.text}> Food Queen</Text>
-      <Text style={{ fontSize: 22, marginTop:20, textAlign: 'center' }}> Food fdfdfgfdg dsgfgdfg fgfdg ete </Text>
+        <View>
+          <Text style={{ fontSize: 32, fontWeight: 'bold', textAlign: 'center' }}> Food Queen</Text>
+          <Text style={{ fontSize: 18, marginTop:20, textAlign: 'center', color: 'grey' }}> Food fdfdfgfdg dsgfgdfg fgfdg ete </Text>
+        </View>
       </View>
 
       <View style={styles.buttonInnerContainer} >
-      <PrimaryButton children= {'Login'}/>
+      <PrimaryButton onPress={() => navigation.navigate('Login')} title= {'Login'}/>
       </View>
     </>
   );
@@ -34,5 +36,10 @@ const styles = StyleSheet.create({
   backgroundImage: {
     opacity: 1,
   },
-
+  textContainer: {
+    flex: 1,
+    paddingHorizontal: 50,
+    justifyContent: 'space-between',
+    paddingBottom: 40,
+  }
 });

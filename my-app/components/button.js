@@ -1,52 +1,49 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import Colors from '../constants/colors';
 
-function PrimaryButton({ children, onPress }) {
+function PrimaryButton({ title, onPress = () => {} }) {
   return (
-      <>  
-    <View style={styles.buttonOuterContainer}>
-      <Pressable
-        style={({ pressed }) =>
-          pressed
-            ? [styles.buttonInnerContainer, styles.pressed]
-            : styles.buttonInnerContainer
-        }
-        onPress={onPress}
-        android_ripple={{ color: Colors.primary600 }}
-      >
-        <Text style={styles.buttonText}>{children}</Text>
-      </Pressable>
-    </View>
-    </>
+      <TouchableOpacity activeOpacity={0.8} onPress= {onPress}>  
+        <View style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>{title}</Text>
+        </View>
+    </TouchableOpacity>
   );
 }
 
 export default PrimaryButton;
 
 const styles = StyleSheet.create({
-  buttonOuterContainer: {
-    borderRadius: 28,
-    margin: 4,
-    overflow: 'hidden',
-    // position: 'absolute'
-  },
-  buttonInnerContainer: {
-    backgroundColor: Colors.primary500,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    elevation: 2,
-  },
-  buttonText: {
+  title: {
     color: 'white',
-    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize:18,
   },
-  pressed: {
-    opacity: 0.75,
+  buttonContainer: {
+    backgroundColor: Colors.primary500,
+    borderRadius: 30,
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  rootScreen: {
-    flex: 1,
-  },
-  backgroundImage: {
-    opacity: 1,
-  },
+  // buttonInnerContainer: {
+  //   backgroundColor: Colors.primary500,
+  //   paddingVertical: 8,
+  //   paddingHorizontal: 16,
+  //   elevation: 2,
+  // },
+  // buttonText: {
+  //   color: 'white',
+  //   textAlign: 'center',
+  // },
+  // pressed: {
+  //   opacity: 0.75,
+  // },
+  // rootScreen: {
+  //   flex: 1,
+  // },
+  // backgroundImage: {
+  //   opacity: 1,
+  // },
 });
