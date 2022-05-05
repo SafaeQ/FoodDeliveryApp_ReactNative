@@ -16,7 +16,7 @@ function HomeScreen() {
       <View style= {styles.textContainer}>
         <View>
           <Text style={{ fontSize: 32, fontWeight: 'bold', textAlign: 'center' }}> Food Queen</Text>
-          <Text style={{ fontSize: 18, marginTop:20, textAlign: 'center', color: 'grey' }}> Food fdfdfgfdg dsgfgdfg fgfdg ete </Text>
+          <Text style={{ fontSize: 18, marginTop: 30, textAlign: 'center', color: 'grey' }}> Delicios Food... we help you to find the best in our application </Text>
         </View>
       </View>
 
@@ -39,9 +39,9 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
-    paddingHorizontal: 50,
+    top: 10,
     justifyContent: 'space-between',
-    paddingBottom: 40,
+    paddingHorizontal: 50,
   },
   buttonInnerContainer: {
     top: -49,

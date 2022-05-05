@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     fontSize:18,
   },
   buttonContainer: {
-    backgroundColor: Colors.primary500,
+    backgroundColor: Colors.accent500,
     borderRadius: 30,
     height: 60,
     justifyContent: 'center',
