@@ -16,7 +16,7 @@ import CheckBox from "react-native-check-box";
 import { basic, form} from "../constants/style";
 import colors from "../constants/colors";
 
-const Login = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -150,4 +150,4 @@ const Login = ({ navigation }) => {
   );
 };
 
-export default Login;
+export default LoginScreen;
