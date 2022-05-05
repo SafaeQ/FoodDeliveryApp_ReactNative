@@ -6,7 +6,7 @@ function PrimaryButton({ title, onPress = () => {} }) {
   return (
       <TouchableOpacity activeOpacity={0.8} onPress= {onPress}>  
         <View style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>{title}</Text>
+            <Text style={styles.title}>{title}</Text>
         </View>
     </TouchableOpacity>
   );
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 4,
   },
   // buttonInnerContainer: {
   //   backgroundColor: Colors.primary500,

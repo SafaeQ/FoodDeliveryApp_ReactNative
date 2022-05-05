@@ -22,6 +22,7 @@ function HomeScreen() {
 
       <View style={styles.buttonInnerContainer} >
       <PrimaryButton onPress={() => navigation.navigate('Login')} title= {'Login'}/>
+      <PrimaryButton onPress={() => navigation.navigate('Signup')} title= {'Sign Up'}/>
       </View>
     </>
   );
@@ -41,5 +42,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 50,
     justifyContent: 'space-between',
     paddingBottom: 40,
-  }
+  },
+  buttonInnerContainer: {
+    top: -49,
+  },
 });
