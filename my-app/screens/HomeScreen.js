@@ -6,7 +6,7 @@ function HomeScreen() {
   return (
       <>  
         <ImageBackground
-        source={require('../assets/images/téléchargement.jpg')}
+        source={require('../assets/images/téléchargement-removebg-preview (1).png')}
          resizeMode="contain"
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
