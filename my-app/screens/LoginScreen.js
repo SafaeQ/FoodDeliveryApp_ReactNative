@@ -53,10 +53,10 @@ const LoginScreen = ({ navigation }) => {
     }
 
   console.log(obj);
-    api.post('/auth/signup', obj)
+    api.post('/auth/login', obj)
           .then((res) => {
             console.log(res.data)
-            navigation.navigate("Login")
+            navigation.navigate("Profile")
         }).catch((error) => {
             console.log(error)
             navigation.navigate("Login")
