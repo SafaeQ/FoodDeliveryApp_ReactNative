@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import PrimaryButton from '../components/button';
 
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
       <>  
         <ImageBackground
@@ -22,7 +22,7 @@ function HomeScreen() {
 
       <View style={styles.buttonInnerContainer} >
       <PrimaryButton onPress={() => navigation.navigate('Login')} title= {'Login'}/>
-      <PrimaryButton onPress={() => console.log('clicked')} title= {'Sign Up'}/>
+      <PrimaryButton onPress={() => navigation.navigate('Signup')} title= {'Sign Up'}/>
       </View>
     </>
   );

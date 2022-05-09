@@ -85,7 +85,7 @@ export const form = StyleSheet.create({
   },
   buttonText1: {
     fontWeight: "bold",
-    color: colors.tertiary,
+    color: colors.accent500,
     fontSize: 15
   },
   google: {
