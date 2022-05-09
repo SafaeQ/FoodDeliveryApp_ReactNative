@@ -54,8 +54,6 @@ function SignupScreen({navigation}) {
       setMessage("Password should have more than 10 characters");
     } else if (!validatePassword(password)) {
       setMessage("Password should include numbers");
-    } else if (password !== adress) {
-      setMessage("Passwords donot match!");
     } else {
       setMessage("");
       setPassword("");
@@ -63,14 +61,15 @@ function SignupScreen({navigation}) {
       setName("");
       setEmail("");
       setAdress("");
-      navigation.navigate("Home");
+      navigation.navigate("Login");
     }
+    console.log(password);
   };
 
   return (
     <>
-
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+{/* onPress={() => Keyboard.dismiss()} */}
+    <TouchableWithoutFeedback >
       <KeyboardAvoidingView
         style={[basic.container]}
         behavior="padding"

@@ -51,7 +51,7 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+    <TouchableWithoutFeedback>
       <View style={[basic.container]}>
         <Text style={[form.heading, form.field]}>Log In</Text>
         <Text style={form.message}>{message}</Text>
@@ -95,20 +95,10 @@ const LoginScreen = ({ navigation }) => {
         </View>
 
         <View style={form.field}>
-          {termsCheck && (
-            <TouchableOpacity onPress={handleSubmit} style={colors.accent500}>
+            <TouchableOpacity onPress={handleSubmit} style={[form.button]} >
               <Text style={form.buttonText}>Login</Text>
             </TouchableOpacity>
-          )}
-          {!termsCheck && (
-            <TouchableOpacity
-              disabled
-              onPress={handleSubmit}
-              style={[form.button, form.disabled]}
-            >
-              <Text style={form.buttonText}>Login</Text>
-            </TouchableOpacity>
-          )}
+
         </View>
 
         <View style={[form.field, form.field1]}>
