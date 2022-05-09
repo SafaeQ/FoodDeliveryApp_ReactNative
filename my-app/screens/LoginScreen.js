@@ -83,16 +83,6 @@ const LoginScreen = ({ navigation }) => {
           />
         </View>
 
-        <View style={form.field}>
-          {/* <BouncyCheckbox
-            onClick={() => setTermsCheck(!termsCheck)}
-            isChecked={termsCheck}
-            checkBoxColor={colors.secondary}
-            checkedCheckBoxColor={colors.tertiary}
-            rightText={"Terms & Conditions"}
-            rightTextStyle={form.terms}
-          /> */}
-        </View>
 
         <View style={form.field}>
             <TouchableOpacity onPress={handleSubmit} style={[form.button]} >
