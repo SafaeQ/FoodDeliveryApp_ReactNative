@@ -9,7 +9,7 @@ import { View,
   KeyboardAvoidingView} from 'react-native';
 
 import api from "../constants/axios";
-import { Picker } from '@react-native-picker/picker';
+// import { Picker } from '@react-native-picker/picker';
 import { Ionicons } from "@expo/vector-icons";
 import { basic, form } from "../constants/style";
 
