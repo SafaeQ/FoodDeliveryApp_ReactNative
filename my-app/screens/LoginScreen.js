@@ -9,6 +9,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
+import api from "../constants/axios";
 
 // Custom styles
 import { basic, form} from "../constants/style";
@@ -45,6 +46,21 @@ const LoginScreen = ({ navigation }) => {
       setEmail("");
       navigation.navigate("Home");
     }
+
+    let obj = {
+      email:email,
+      password:password
+    }
+
+  console.log(obj);
+    api.post('/auth/signup', obj)
+          .then((res) => {
+            console.log(res.data)
+            navigation.navigate("Login")
+        }).catch((error) => {
+            console.log(error)
+            navigation.navigate("Login")
+        });
   };
 
   return (
