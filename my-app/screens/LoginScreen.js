@@ -7,10 +7,8 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableWithoutFeedback,
-  Keyboard
 } from "react-native";
 import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 // Custom styles
 import { basic, form} from "../constants/style";
@@ -20,7 +18,6 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [termsCheck, setTermsCheck] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const validateEmail = email => {
