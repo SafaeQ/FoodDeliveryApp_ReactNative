@@ -44,15 +44,15 @@ const LoginScreen = ({ navigation }) => {
       setMessage("");
       setPassword("");
       setEmail("");
-      navigation.navigate("Home");
+      navigation.navigate("Profile");
     }
 
     let obj = {
       email:email,
       password:password
     }
+    console.log(obj);
 
-  console.log(obj);
     api.post('/auth/login', obj)
           .then((res) => {
             console.log(res.data)
