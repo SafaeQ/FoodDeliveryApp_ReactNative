@@ -96,7 +96,7 @@ const LoginScreen = ({ navigation }) => {
 
         <View style={form.field}>
           {termsCheck && (
-            <TouchableOpacity onPress={handleSubmit} style={form.button}>
+            <TouchableOpacity onPress={handleSubmit} style={colors.accent500}>
               <Text style={form.buttonText}>Login</Text>
             </TouchableOpacity>
           )}
