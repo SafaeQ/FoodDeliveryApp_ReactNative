@@ -8,6 +8,8 @@ import { View,
   ScrollView,
   KeyboardAvoidingView} from 'react-native';
 
+import { axios } from "../constants/axios";
+
 import { Ionicons } from "@expo/vector-icons";
 import { basic, form } from "../constants/style";
 
@@ -63,7 +65,25 @@ function SignupScreen({navigation}) {
       setAdress("");
       navigation.navigate("Login");
     }
-    console.log(password);
+    
+    let obj = {
+      name : name,
+      email:email,
+      password:password,
+      adress:adress,
+      phone:phone,
+      // role:role,
+    }
+
+  console.log(obj);
+    axios.post('/auth/signup', obj)
+          .then((res) => {
+            console.log(res.data)
+            navigate('/login')
+        }).catch((error) => {
+            console.log(error)
+            navigate('/')
+        });
   };
 
   return (
