@@ -8,8 +8,8 @@ import { View,
   ScrollView,
   KeyboardAvoidingView} from 'react-native';
 
-import { axios } from "../constants/axios";
-
+import api from "../constants/axios";
+import { Picker } from '@react-native-picker/picker';
 import { Ionicons } from "@expo/vector-icons";
 import { basic, form } from "../constants/style";
 
@@ -21,6 +21,7 @@ function SignupScreen({navigation}) {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [adress, setAdress] = useState("");
+  const [role, setRole] = useState("");
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
@@ -63,6 +64,7 @@ function SignupScreen({navigation}) {
       setName("");
       setEmail("");
       setAdress("");
+      setRole("");
       navigation.navigate("Login");
     }
     
@@ -72,17 +74,17 @@ function SignupScreen({navigation}) {
       password:password,
       adress:adress,
       phone:phone,
-      // role:role,
+      role:role,
     }
 
   console.log(obj);
-    axios.post('/auth/signup', obj)
+    api.post('/auth/signup', obj)
           .then((res) => {
             console.log(res.data)
-            navigate('/login')
+            navigation.navigate("Login")
         }).catch((error) => {
             console.log(error)
-            navigate('/')
+            navigation.navigate("Bord")
         });
   };
 
@@ -158,8 +160,18 @@ function SignupScreen({navigation}) {
               onChangeText={value => setAdress(value)}
               name="adress"
               style={form.input}
-              secureTextEntry={!showPassword}
               value={adress}
+              autoCapitalize="none"
+            />
+          </View>
+
+          <View style={form.field}>
+            <Text style={form.label}>Role</Text>
+            <TextInput
+              onChangeText={value => setRole(value)}
+              name="role"
+              style={form.input}
+              value={role}
               autoCapitalize="none"
             />
           </View>
