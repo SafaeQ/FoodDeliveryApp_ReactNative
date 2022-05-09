@@ -22,7 +22,7 @@ export default function App() {
       </NavigationContainer>
       {/* <HomeScreen/> */}
       {/* <SignupScreen/> */}
-      {/* <LoginScreen/> */}
+      {/* <ProfileScreen/> */}
     </>
     
   );
