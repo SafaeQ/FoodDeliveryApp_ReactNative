@@ -5,12 +5,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
 const ButtonNavigator = () => {
   return (
     <Tab.Navigator>
+
       <Tab.Screen
         name="Feed"
         component={HomeScreen}
@@ -21,6 +23,18 @@ const ButtonNavigator = () => {
           ),
         }}
       />
+
+       <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color="black" size={24} />
+          ),
+        }}
+      />
+
     </Tab.Navigator>
   );
 }
