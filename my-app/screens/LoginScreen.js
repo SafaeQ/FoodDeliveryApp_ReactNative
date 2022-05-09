@@ -10,7 +10,7 @@ import {
   Keyboard
 } from "react-native";
 import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
-import CheckBox from "react-native-check-box";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 // Custom styles
 import { basic, form} from "../constants/style";
@@ -84,7 +84,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
 
         <View style={form.field}>
-          <CheckBox
+          <BouncyCheckbox
             onClick={() => setTermsCheck(!termsCheck)}
             isChecked={termsCheck}
             checkBoxColor={colors.secondary}
