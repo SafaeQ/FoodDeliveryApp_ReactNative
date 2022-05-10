@@ -14,13 +14,13 @@ export default function App() {
   return (
     <>
       <NavigationContainer>
-        <ButtonNavigator/>
-        {/* <Stack.Navigator>
+        {/* <ButtonNavigator/> */}
+        <Stack.Navigator>
           <Stack.Screen name="Bord" component={HomeScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Signup" component={SignupScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
-        </Stack.Navigator> */}
+        </Stack.Navigator>
       </NavigationContainer>
       {/* <ButtonNavigator/> */}
       {/* <SignupScreen/> */}
