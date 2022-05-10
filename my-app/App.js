@@ -16,9 +16,9 @@ export default function App() {
   return (
     <>
 
-    <UserContext.Provider>
+    {/* <UserContext.Provider> */}
       <Navigation />
-    </UserContext.Provider>
+    {/* </UserContext.Provider> */}
 
       {/* <NavigationContainer>
         <Stack.Navigator>

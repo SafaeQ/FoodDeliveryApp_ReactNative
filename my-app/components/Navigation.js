@@ -12,6 +12,7 @@ import IonicIcon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import AboutScreen from '../screens/AboutScreen';
 import  {Text, Dimensions}  from 'react-native';
 
 const fullScreenWidth = Dimensions.get('window').width
@@ -65,7 +66,7 @@ export default function Navigation (props) {
                     }
                     
                     return (
-                        <IonicIcon name= {iconName} size={size} color={color} paddingBottom={padding} />
+                        <IonicIcon size={{ fontSize: 16 }} color={'grey'} paddingBottom={padding} style={{ width: fullScreenWidth }} />
                     )
                 }
             })}
