@@ -1,14 +1,22 @@
-import 'react-native-screens'
-
 import * as React from 'react';
+
+// Navigation components 
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, SafeAreaView } from 'react-native';
-// import HomeScreen from './screens/HomeScreen'
-// import LoginScreen from './screens/LoginScreen';
-// import SignupScreen from './screens/SignUpScreen';
-// import ProfileScreen from './screens/ProfileScreen';
+
+// import screeen
+
+import BordScreen from './screens/BordScreen'
+import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignupScreen';
+
 
 import  Navigation from './components/Navigation';
-import UserContext from './UserContext';
+
+
+const Stack = createNativeStackNavigator();
 
 
 
@@ -16,18 +24,16 @@ export default function App() {
   return (
     <>
   
-    {/* <UserContext.Provider> */}
-      <Navigation />
-    {/* </UserContext.Provider> */}
-
-      {/* <NavigationContainer>
+      <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Bord" component={HomeScreen} />
+          <Stack.Screen name="Bord" component={BordScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Signup" component={SignupScreen} />
-          <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="Root" component={Navigation} options={{ headerShown: false }} />
         </Stack.Navigator>
-      </NavigationContainer> */}
+      </NavigationContainer>
+
+
     </>
     
   );

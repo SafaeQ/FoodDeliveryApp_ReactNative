@@ -2,7 +2,6 @@ import React from 'react';
 
 // Navigation components 
 
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -13,8 +12,6 @@ import IonicIcon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import AboutScreen from '../screens/AboutScreen';
-import LoginScreen from '../screens/LoginScreen';
-import SignupScreen from '../screens/SignupScreen';
 import  {Text, Dimensions}  from 'react-native';
 
 const fullScreenWidth = Dimensions.get('window').width
@@ -53,7 +50,7 @@ const Tab = createBottomTabNavigator();
 function Navigation (props) {
     return(
         <>
-        <NavigationContainer>
+        
             <Tab.Navigator 
             screenOptions={({route}) => ({
                 tabBarIcon: ({focused, color, size, padding}) => {
@@ -85,8 +82,8 @@ function Navigation (props) {
                 <Tab.Screen name="ProfileScreen" component={ProfileStackScreen} options={{ headerShown: false }} />
                 <Tab.Screen name="AboutScreen" component={AboutStackScreen} options={{ headerShown: false }} />
             </Tab.Navigator>
-        </NavigationContainer>
         </>
+
     )
 }
 
