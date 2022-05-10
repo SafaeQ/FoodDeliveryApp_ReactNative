@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator();
 function HomeStackScreen() {
     return(
         <Stack.Navigator>
-            <Stack.Screen name= "Home" component={HomeScreen}/>
+            <Stack.Screen name= "Home" component={HomeScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }
@@ -30,7 +30,7 @@ function HomeStackScreen() {
 function ProfileStackScreen() {
     return(
         <Stack.Navigator>
-            <Stack.Screen name= "Profile" component={ProfileScreen}/>
+            <Stack.Screen name= "Profile" component={ProfileScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }
@@ -38,7 +38,7 @@ function ProfileStackScreen() {
 function AboutStackScreen() {
     return(
         <Stack.Navigator>
-            <Stack.Screen name= "About" component={AboutScreen}/>
+            <Stack.Screen name= "About" component={AboutScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }
@@ -47,7 +47,7 @@ function AboutStackScreen() {
 const Tab = createBottomTabNavigator();
 
 
-function Navigation (props) {
+function Navigation ({ navigation }) {
     return(
         <>
         
@@ -78,9 +78,9 @@ function Navigation (props) {
             //     style:{width: fullScreenWidth}
             //  }}
             >
-                <Tab.Screen name="HomeScreen" component={HomeStackScreen} options={{ headerShown: false }} />
-                <Tab.Screen name="ProfileScreen" component={ProfileStackScreen} options={{ headerShown: false }} />
-                <Tab.Screen name="AboutScreen" component={AboutStackScreen} options={{ headerShown: false }} />
+                <Tab.Screen name="Home" component={HomeStackScreen} />
+                <Tab.Screen name="Profile" component={ProfileStackScreen} />
+                <Tab.Screen name="About" component={AboutStackScreen} />
             </Tab.Navigator>
         </>
 
