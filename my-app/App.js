@@ -7,7 +7,7 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 // import SignupScreen from './screens/SignUpScreen';
 // import ProfileScreen from './screens/ProfileScreen';
 
-import Navigation from './components/Navigation';
+import  Navigation from './components/Navigation';
 import UserContext from './UserContext';
 
 
@@ -15,7 +15,7 @@ import UserContext from './UserContext';
 export default function App() {
   return (
     <>
-
+  
     {/* <UserContext.Provider> */}
       <Navigation />
     {/* </UserContext.Provider> */}
