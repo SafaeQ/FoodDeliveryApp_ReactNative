@@ -47,7 +47,7 @@ function AboutStackScreen() {
 const Tab = createBottomTabNavigator();
 
 
-function Navigation ({ navigation }) {
+function Navigation () {
     return(
         <>
         

@@ -12,12 +12,10 @@ import BordScreen from './screens/BordScreen'
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 
-
 import  Navigation from './components/Navigation';
 
 
 const Stack = createNativeStackNavigator();
-
 
 
 export default function App() {
@@ -32,7 +30,6 @@ export default function App() {
           <Stack.Screen name="Root" component={Navigation} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
-
 
     </>
     
