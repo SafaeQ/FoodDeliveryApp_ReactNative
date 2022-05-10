@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import  Navigation from '../components/Navigation';
 
 
 import {
@@ -15,7 +16,7 @@ import api from "../constants/axios";
 import { basic, form} from "../constants/style";
 import colors from "../constants/colors";
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = ( {navigation: { navigate }} ) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -44,7 +45,7 @@ const LoginScreen = ({ navigation }) => {
       setMessage("");
       setPassword("");
       setEmail("");
-      navigation.navigate("Profile");
+      navigate("Root",{ screen: "Profile" })
     }
 
     let obj = {
@@ -56,10 +57,10 @@ const LoginScreen = ({ navigation }) => {
     api.post('/auth/login', obj)
           .then((res) => {
             console.log(res.data)
-            navigation.navigate("Profile")
+           navigate("Root",{ screen: "Profile" })
         }).catch((error) => {
             console.log(error)
-            navigation.navigate("Login")
+           navigate("Login")
         });
   };
 

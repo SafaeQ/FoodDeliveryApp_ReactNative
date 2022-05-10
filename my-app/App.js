@@ -25,7 +25,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Bord" component={BordScreen} />
-          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Login" component={LoginScreen } />
           <Stack.Screen name="Signup" component={SignupScreen} />
           <Stack.Screen name="Root" component={Navigation} options={{ headerShown: false }} />
         </Stack.Navigator>

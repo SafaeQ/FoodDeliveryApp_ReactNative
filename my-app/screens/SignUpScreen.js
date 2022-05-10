@@ -14,7 +14,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { basic, form } from "../constants/style";
 
 
-function SignupScreen({navigation}) {
+function SignupScreen({navigation: { navigate }}) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -65,7 +65,7 @@ function SignupScreen({navigation}) {
       setEmail("");
       setAdress("");
       setRole("");
-      navigation.navigate("Login");
+      navigate("Login");
     }
     
     let obj = {
@@ -81,10 +81,10 @@ function SignupScreen({navigation}) {
     api.post('/auth/signup', obj)
           .then((res) => {
             console.log(res.data)
-            navigation.navigate("Login")
+            navigate("Login")
         }).catch((error) => {
             console.log(error)
-            navigation.navigate("Bord")
+            navigate("Bord")
         });
   };
 

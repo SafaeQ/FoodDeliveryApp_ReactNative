@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator();
 function HomeStackScreen() {
     return(
         <Stack.Navigator>
-            <Stack.Screen name= "Home" component={HomeScreen} options={{ headerShown: false }}/>
+            <Stack.Screen name= "HomeScreen" component={HomeScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }
@@ -30,7 +30,7 @@ function HomeStackScreen() {
 function ProfileStackScreen() {
     return(
         <Stack.Navigator>
-            <Stack.Screen name= "Profile" component={ProfileScreen} options={{ headerShown: false }}/>
+            <Stack.Screen name= "ProfileScreen" component={ProfileScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }
@@ -38,7 +38,7 @@ function ProfileStackScreen() {
 function AboutStackScreen() {
     return(
         <Stack.Navigator>
-            <Stack.Screen name= "About" component={AboutScreen} options={{ headerShown: false }}/>
+            <Stack.Screen name= "AboutScreen" component={AboutScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }
