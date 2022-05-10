@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import IonicIcon from '@expo/vector-icons';
+import IonicIcon from 'react-native-vector-icons/Ionicons';
 
 // import screen
 
@@ -45,12 +45,12 @@ function AboutStackScreen() {
 
 const Tab = createBottomTabNavigator();
 
+
 export default function Navigation (props) {
     return(
         <NavigationContainer>
             <Tab.Navigator 
             screenOptions={({route}) => ({
-                headerTitle: () => <Text> Header </Text>,
                 tabBarIcon: ({focused, color, size, padding}) => {
                     let iconName;
 
@@ -69,16 +69,16 @@ export default function Navigation (props) {
                     )
                 }
             })}
-            tabBarOptions={{ 
-                activeTintColor: 'lightseagreen',
-                inactiveTintColor: 'grey',
-                labelStyle: {fontSize: 16},
-                style:{width: fullScreenWidth}
-             }}
+            // screenOptions={{ 
+            //     activeTintColor: 'lightseagreen',
+            //     inactiveTintColor: 'grey',
+            //     labelStyle: {fontSize: 16},
+            //     style:{width: fullScreenWidth}
+            //  }}
             >
-                <Tab.Screen name="Home" component={HomeStackScreen} />
-                <Tab.Screen name="Profile" component={ProfileStackScreen} />
-                <Tab.Screen name="About" component={AboutStackScreen} />
+                <Tab.Screen name="HomeScreen" component={HomeStackScreen} />
+                <Tab.Screen name="ProfileScreen" component={ProfileStackScreen} />
+                <Tab.Screen name="AboutScreen" component={AboutStackScreen} />
             </Tab.Navigator>
         </NavigationContainer>
     )
