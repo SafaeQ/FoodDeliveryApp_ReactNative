@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, Dimensions, Pressable, ImageBackground } from 'react-native';
 
 const data = [
@@ -8,30 +8,49 @@ const data = [
 
 // Custom styles
 import { basic, form} from "../constants/style";
+import api from "../constants/axios";
 
 const numColumns = 2;
 
 export default function Home() {
 
-  // const [state, setstate] = useState(initialState);
+  const [dataa, setData] = useState('');
 
-  
+
+  const fetchData = (e) => {
+
+    api.get('/repast/all-repast')
+          .then((res) => {
+            console.log(res.data)
+            setData(res.data)
+          //  navigate("Root",{ screen: "Profile" })
+        }).catch((error) => {
+            console.log({error});
+          //  navigate("Login")
+        });
+  }
+  // console.log(dataa);
+//   useEffect(()=>{
+//     fetchData()
+// },[])
+
  const renderItem = ({ item }) => {
     
     return (
       <>
 
-      <View style={styles.gridItem}>
+      <View style={styles.gridItem} >
       <Pressable
         style={({ pressed }) => [
           styles.button,
           pressed ? styles.buttonPressed : null,
         ]}
+        // onPress={fetchData}
       >
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <ImageBackground source={ require('../assets/images/téléchargement-removebg-preview (1).png')} style={{width: 151, height: 142}} >
-            </ImageBackground>
-              {/* <Text style={styles.title}>{item.key}</Text> */}
+            {/* <ImageBackground source={ dataa.image[0] } style={{width: 151, height: 142}} >
+            </ImageBackground> */}
+              {/* <Text style={styles.title}>{dataa.name}</Text> */}
         </View>
       </Pressable>
     </View>
@@ -42,7 +61,7 @@ export default function Home() {
   
     return (
       <>
-      <View>
+      <View >
           <Text style={[form.heading, form.field]}> Home </Text>
         </View>
       <FlatList
