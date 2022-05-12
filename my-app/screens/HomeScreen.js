@@ -3,18 +3,17 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Dimensions, Pressable, ImageBackground } from 'react-native';
 
 const data = [
-  { key: 'A' }, { key: 'B' }, { key: 'C' }, { key: 'D' }, { key: 'E' }, { key: 'F' }, { key: 'G' }, { key: 'H' }, { key: 'I' }, { key: 'J' },{ key: 'J' }, { key: 'J' }
+  { key: 'A' }, { key: 'B' }, { key: 'C' }, { key: 'D' }, { key: 'E' }, { key: 'F' }, { key: 'G' }, { key: 'H' }, { key: 'I' }
 ];
 
 // Custom styles
 import { basic, form} from "../constants/style";
-import colors from "../constants/colors";
 
 const numColumns = 2;
 
 export default function Home() {
 
-  const [state, setstate] = useState(initialState);
+  // const [state, setstate] = useState(initialState);
 
   
  const renderItem = ({ item }) => {
@@ -32,7 +31,7 @@ export default function Home() {
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
             <ImageBackground source={ require('../assets/images/téléchargement-removebg-preview (1).png')} style={{width: 151, height: 142}} >
             </ImageBackground>
-              <Text style={styles.title}>{item.key}</Text>
+              {/* <Text style={styles.title}>{item.key}</Text> */}
         </View>
       </Pressable>
     </View>
