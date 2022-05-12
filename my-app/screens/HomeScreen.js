@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Dimensions, Pressable, ImageBackground } from 'react-native';
 
 const data = [
@@ -14,7 +14,7 @@ const numColumns = 2;
 
 export default function Home() {
 
-  
+  const [state, setstate] = useState(initialState);
 
   
  const renderItem = ({ item }) => {
