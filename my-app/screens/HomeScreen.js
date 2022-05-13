@@ -19,7 +19,7 @@ export default function Home() {
 
   const fetchData = (e) => {
 
-    api.get('/repast/all-repast')
+    fetch('http://localhost:9988/repast/add-repast')
           .then((res) => {
             console.log(res.data)
             setData(res.data)
@@ -48,9 +48,9 @@ export default function Home() {
         // onPress={fetchData}
       >
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            {/* <ImageBackground source={ dataa.image[0] } style={{width: 151, height: 142}} >
-            </ImageBackground> */}
-              {/* <Text style={styles.title}>{dataa.name}</Text> */}
+            <ImageBackground source={ dataa.image[0] } style={{width: 151, height: 142}} >
+            </ImageBackground>
+              <Text style={styles.title}>{dataa.name}</Text>
         </View>
       </Pressable>
     </View>
@@ -65,7 +65,7 @@ export default function Home() {
           <Text style={[form.heading, form.field]}> Home </Text>
         </View>
       <FlatList
-        data={data}
+        data={fetchData}
         style={styles.container}
         renderItem={renderItem}
         numColumns={numColumns}
