@@ -4,54 +4,53 @@ import { StyleSheet, Text, View, FlatList, Dimensions, ActivityIndicator, Pressa
 
 // Custom styles
 import { basic, form} from "../constants/style";
-import api from "../constants/axios";
 
 const numColumns = 2;
 
 export default function Home() {
 
   const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState('');
 
 
   const fetchData = async () => {
-    try {
-     const response = await fetch('http://localhost:9988/repast/all-repast');
-     const json = await response.json();
-     setData(json.data);
-   } catch (error) {
-     console.error(error);
-   } finally {
-     setLoading(false);
-   }
- }
-  // console.log(dataa);
+      try {
+      const response = await fetch('http://localhost:9988/repast/all-repast');
+      const json = await response.json();
+      setData(json.data);
+      
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+}
+
   useEffect(()=>{
     fetchData()
 },[])
 
-//  const renderItem = ({ item }) => {    
-//     return (
-//       <>
-
-//       <View style={styles.gridItem} >
-//       <Pressable
-//         style={({ pressed }) => [
-//           styles.button,
-//           pressed ? styles.buttonPressed : null,
-//         ]}
-//         // onPress={fetchData}
-//       >
-//         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-//             <ImageBackground source={ dataa.image[0] } style={{width: 151, height: 142}} >
-//             </ImageBackground>
-//               <Text style={styles.title}>{dataa.name}</Text>
-//         </View>
-//       </Pressable>
-//     </View>
-//       </>
-//     );
-//   };
+ const renderItem = ({ item }) => {    
+    return (
+      <>
+      <View style={styles.gridItem} >
+      <Pressable
+        style={({ pressed }) => [
+          styles.button,
+          pressed ? styles.buttonPressed : null,
+        ]}
+        // onPress={fetchData}
+      >
+        <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
+            <ImageBackground source={ item.image[0] } style={{width: 151, height: 142}} >
+            </ImageBackground>
+              <Text style={styles.title}>{item.name}</Text>
+        </View>
+      </Pressable>
+    </View>
+      </>
+    );
+  };
 
 return (
   <View style={{ flex: 1, padding: 24 }}>
@@ -60,9 +59,7 @@ return (
       <FlatList
         data={data}
         keyExtractor={({ id }, index) => id}
-        renderItem={({ item }) => (
-          <Text>{item.name}, {item.price}</Text>
-        )}
+        renderItem={renderItem}
         numColumns={numColumns}
       />
     )}
