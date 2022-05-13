@@ -10,7 +10,7 @@ const numColumns = 2;
 export default function Home() {
 
   const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState('');
+  const [data, setData] = useState([]);
 
 
   const fetchData = async () => {
@@ -24,7 +24,7 @@ export default function Home() {
         }, 
       });
       const json = await response.json();
-      setData(json.data);
+      setData(json);
       console.log(json);
 
     } catch (error) {
@@ -35,7 +35,7 @@ export default function Home() {
     }
   }
   
-    console.log(data);
+    console.log("hhhhhhhhhhhhhhhhhh",data);
 
   useEffect(()=>{
     fetchData()
@@ -69,7 +69,7 @@ return (
     {isLoading ? <ActivityIndicator/> : (
       <FlatList
         data={data}
-        keyExtractor={({ id }, index) => id}
+        keyExtractor={(item, index) => index.toString()}
         renderItem={renderItem}
         numColumns={numColumns}
       />
