@@ -14,6 +14,7 @@ export default function Home() {
 
 
   const fetchData = async () => {
+
       try {
       const response = await fetch('http://localhost:9988/repast/all-repast');
       const json = await response.json();
