@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList, Dimensions, ActivityIndicator, Pressable, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Dimensions, ActivityIndicator, Pressable, Image } from 'react-native';
 
 // Custom styles
 import { basic, form} from "../constants/style";
@@ -53,8 +53,8 @@ export default function Home() {
         // onPress={fetchData}
       >
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <ImageBackground source={ item.image[0] } style={{width: 151, height: 142}} >
-            </ImageBackground>
+            <Image source={ { uri: item.image } } resizeMode='cover' style={{width: 151, height: 142}} />
+            {/* </Image> */}
               <Text style={styles.title}>{item.name}</Text>
         </View>
       </Pressable>
