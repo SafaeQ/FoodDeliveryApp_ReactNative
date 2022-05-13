@@ -2,10 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, Dimensions, Pressable, ImageBackground } from 'react-native';
 
-const data = [
-  { key: 'A' }, { key: 'B' }, { key: 'C' }, { key: 'D' }, { key: 'E' }, { key: 'F' }, { key: 'G' }, { key: 'H' }, { key: 'I' }
-];
-
 // Custom styles
 import { basic, form} from "../constants/style";
 import api from "../constants/axios";
@@ -14,64 +10,78 @@ const numColumns = 2;
 
 export default function Home() {
 
-  const [dataa, setData] = useState('');
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
 
-  const fetchData = (e) => {
-
-    fetch('http://localhost:9988/repast/add-repast')
-          .then((res) => {
-            console.log(res.data)
-            setData(res.data)
-          //  navigate("Root",{ screen: "Profile" })
-        }).catch((error) => {
-            console.log({error});
-          //  navigate("Login")
-        });
-  }
+  const fetchData = async () => {
+    try {
+     const response = await fetch('http://localhost:9988/repast/add-repast');
+     const json = await response.json();
+     setData(json.data);
+   } catch (error) {
+     console.error(error);
+   } finally {
+     setLoading(false);
+   }
+ }
   // console.log(dataa);
-//   useEffect(()=>{
-//     fetchData()
-// },[])
+  useEffect(()=>{
+    fetchData()
+},[])
 
- const renderItem = ({ item }) => {
-    
-    return (
-      <>
+//  const renderItem = ({ item }) => {    
+//     return (
+//       <>
 
-      <View style={styles.gridItem} >
-      <Pressable
-        style={({ pressed }) => [
-          styles.button,
-          pressed ? styles.buttonPressed : null,
-        ]}
-        // onPress={fetchData}
-      >
-        <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <ImageBackground source={ dataa.image[0] } style={{width: 151, height: 142}} >
-            </ImageBackground>
-              <Text style={styles.title}>{dataa.name}</Text>
-        </View>
-      </Pressable>
-    </View>
-      </>
-    );
-  };
+//       <View style={styles.gridItem} >
+//       <Pressable
+//         style={({ pressed }) => [
+//           styles.button,
+//           pressed ? styles.buttonPressed : null,
+//         ]}
+//         // onPress={fetchData}
+//       >
+//         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
+//             <ImageBackground source={ dataa.image[0] } style={{width: 151, height: 142}} >
+//             </ImageBackground>
+//               <Text style={styles.title}>{dataa.name}</Text>
+//         </View>
+//       </Pressable>
+//     </View>
+//       </>
+//     );
+//   };
 
-  
-    return (
-      <>
-      <View >
-          <Text style={[form.heading, form.field]}> Home </Text>
-        </View>
+return (
+  <View style={{ flex: 1, padding: 24 }}>
+    <Text style={[form.heading, form.field]}> Home </Text>
+    {isLoading ? <ActivityIndicator/> : (
       <FlatList
-        data={fetchData}
-        style={styles.container}
-        renderItem={renderItem}
+        data={data}
+        keyExtractor={({ id }, index) => id}
+        renderItem={({ item }) => (
+          <Text>{item.name}, {item.price}</Text>
+        )}
         numColumns={numColumns}
       />
-      </>
-    );
+    )}
+  </View>
+)  
+
+    // return (
+    //   <>
+    //   <View >
+    //       <Text style={[form.heading, form.field]}> Home </Text>
+    //     </View>
+    //   <FlatList
+    //     data={fetchData}
+    //     style={styles.container}
+    //     renderItem={renderItem}
+    //     numColumns={numColumns}
+    //   />
+    //   </>
+    // );
   
 }
 
