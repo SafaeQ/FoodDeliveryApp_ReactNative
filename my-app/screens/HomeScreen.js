@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList, Dimensions, Pressable, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Dimensions, ActivityIndicator, Pressable, ImageBackground } from 'react-native';
 
 // Custom styles
 import { basic, form} from "../constants/style";
@@ -16,7 +16,7 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-     const response = await fetch('http://localhost:9988/repast/add-repast');
+     const response = await fetch('http://localhost:9988/repast/all-repast');
      const json = await response.json();
      setData(json.data);
    } catch (error) {
