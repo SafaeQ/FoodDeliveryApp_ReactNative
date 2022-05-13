@@ -21,6 +21,7 @@ export default function Home() {
       
     } catch (error) {
       console.error(error);
+      
     } finally {
       setLoading(false);
     }
@@ -66,19 +67,6 @@ return (
   </View>
 )  
 
-    // return (
-    //   <>
-    //   <View >
-    //       <Text style={[form.heading, form.field]}> Home </Text>
-    //     </View>
-    //   <FlatList
-    //     data={fetchData}
-    //     style={styles.container}
-    //     renderItem={renderItem}
-    //     numColumns={numColumns}
-    //   />
-    //   </>
-    // );
   
 }
 
@@ -134,48 +122,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-
-
-// const HomeScreen = () => {
-//   return (
-//     <>
-//     <TouchableWithoutFeedback>
-
-//         <View>
-//         <Text style={[form.heading, form.field]}> Home </Text>
-//       </View>
-
-//     </TouchableWithoutFeedback>
-
-//     <View style={styles.container}>
-//       <View style={styles.item} />
-//     </View>
-//     </>
-//   );
-// }
-
-// export default HomeScreen;
-
-// const styles = StyleSheet.create({
-//   container:{
-//     height: 50,
-//     flex: 1,
-//     justifyContent: 'center',
-//     flexDirection: 'row',
-//     alignItems: 'center'
-//   },
-//   item: {
-//     height: 12,
-//     width: 30,
-//     borderRadius: 10,
-//     backgroundColor: 'black',
-//     marginHorizontal: 5
-//   },
-//   rootScreen: {
-//     flex: 1,
-//   },
-//   backgroundImage: {
-//     opacity: 1,
-//   },
-// })
