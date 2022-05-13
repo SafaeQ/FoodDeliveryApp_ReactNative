@@ -33,7 +33,9 @@ export default function Home() {
     } finally {
       setLoading(false);
     }
-}
+  }
+  
+    console.log(data);
 
   useEffect(()=>{
     fetchData()
