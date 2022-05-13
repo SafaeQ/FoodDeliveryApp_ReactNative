@@ -15,11 +15,18 @@ export default function Home() {
 
   const fetchData = async () => {
 
-      try {
-      const response = await fetch('http://localhost:9988/repast/all-repast');
+    try {
+      const response = await fetch('http://localhost:9988/repast/all-repast', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }, 
+      });
       const json = await response.json();
       setData(json.data);
-      
+      console.log(json);
+
     } catch (error) {
       console.error(error);
       
