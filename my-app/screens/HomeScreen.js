@@ -34,8 +34,8 @@ export default function Home() {
       setLoading(false);
     }
   }
+  console.log("image",data);
   
-    console.log("hhhhhhhhhhhhhhhhhh",data);
 
   useEffect(()=>{
     fetchData()
@@ -53,7 +53,7 @@ export default function Home() {
       
       >
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <Image source={ { uri: `${item.image[0]}` } } resizeMode='contain' style={{width: 131, height: 142}} />
+            <Image source={ { url: item.image, method: 'GET', } } resizeMode='center' style={{width: 131, height: 142}} />
             {/* </Image> */}
               <Text style={styles.title}>{item.name}</Text>
         </View>
