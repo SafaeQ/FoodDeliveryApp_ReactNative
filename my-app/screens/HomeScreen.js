@@ -50,10 +50,10 @@ export default function Home() {
           styles.button,
           pressed ? styles.buttonPressed : null,
         ]}
-        // onPress={fetchData}
+      
       >
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <Image source={ { uri: item.image } } resizeMode='cover' style={{width: 151, height: 142}} />
+            <Image source={ { uri: `${item.image[0]}` } } resizeMode='contain' style={{width: 131, height: 142}} />
             {/* </Image> */}
               <Text style={styles.title}>{item.name}</Text>
         </View>
