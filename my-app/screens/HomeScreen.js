@@ -1,11 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, Dimensions, ActivityIndicator, Pressable, Image } from 'react-native';
 
-// Custom styles
+//  styles
+
 import { basic, form} from "../constants/style";
 
+
 const numColumns = 2;
+
 
 export default function Home() {
 
@@ -16,7 +18,7 @@ export default function Home() {
   const fetchData = async () => {
 
     try {
-      const response = await fetch('http://localhost:9988/repast/all-repast', {
+      const response = await fetch('http://localhost:9988/repast', {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -24,8 +26,8 @@ export default function Home() {
         }, 
       });
       const json = await response.json();
-      setData(prev => json);
-      console.log(json[0].image[0]);
+      setData(json);
+      console.log('jsonnn ',json[0].image[0]);
       // console.log(data[0].image[0]);
 
     } catch (error) {
@@ -35,14 +37,13 @@ export default function Home() {
       setLoading(false);
     }
   }
-  console.log("image",data[0]); 
-  // const {image} = data[0]
-  // console.log(data[0]); 
   
-
+  console.log("image",data[0]); 
+  
   useEffect(()=>{
     fetchData()
 },[])
+
 
  const renderItem = ({ item }) => {    
     return (
@@ -52,12 +53,12 @@ export default function Home() {
         style={({ pressed }) => [
           styles.button,
           pressed ? styles.buttonPressed : null,
-        ]}
-      
+        ]}      
       >
+
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <Image source={ { uri: item.image[0] } } resizeMode='center' style={{width: 131, height: 142}} />
-            {/* </Image> */}
+            <Image source={ `http://localhost:9988/image/${item.image[0]}`  } resizeMode='center'  style={{width: 131, height: 142}} />
+            
               <Text style={styles.title}>{item.name}</Text>
         </View>
       </Pressable>
@@ -65,6 +66,8 @@ export default function Home() {
       </>
     );
   };
+
+
 
 return (
   <View style={{ flex: 1, padding: 24 }}>
