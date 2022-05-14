@@ -16,7 +16,7 @@ import api from "../constants/axios";
 import { basic, form} from "../constants/style";
 import colors from "../constants/colors";
 
-const LoginScreen = ( {navigation: { navigate }} ) => {
+const LoginScreen = ( {navigation: { navigate }}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -108,7 +108,7 @@ const LoginScreen = ( {navigation: { navigate }} ) => {
         <View style={[form.field, form.field1]}>
           <Text style={form.text}>You don't have an account?</Text>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Signup")}
+            onPress={() => navigate("Signup")}
             style={form.button1}
           >
             <Text style={form.buttonText1}>Sign Up</Text>
