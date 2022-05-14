@@ -24,8 +24,9 @@ export default function Home() {
         }, 
       });
       const json = await response.json();
-      setData(json);
-      console.log(json);
+      setData(prev => json);
+      console.log(json[0].image[0]);
+      // console.log(data[0].image[0]);
 
     } catch (error) {
       console.error(error);
@@ -34,7 +35,9 @@ export default function Home() {
       setLoading(false);
     }
   }
-  console.log("image",data);
+  console.log("image",data[0]); 
+  // const {image} = data[0]
+  // console.log(data[0]); 
   
 
   useEffect(()=>{
@@ -53,7 +56,7 @@ export default function Home() {
       
       >
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <Image source={ { url: item.image, method: 'GET', } } resizeMode='center' style={{width: 131, height: 142}} />
+            <Image source={ { uri: item.image[0] } } resizeMode='center' style={{width: 131, height: 142}} />
             {/* </Image> */}
               <Text style={styles.title}>{item.name}</Text>
         </View>
