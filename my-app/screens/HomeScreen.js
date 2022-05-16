@@ -12,7 +12,7 @@ const numColumns = 2;
 export default function Home() {
 
   const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
 
   const fetchData = async () => {
@@ -27,8 +27,7 @@ export default function Home() {
       });
       const json = await response.json();
       setData(json);
-      console.log('jsonnn ',json[0].image[0]);
-      // console.log(data[0].image[0]);
+      console.log('jsonnn ',json[0].image);
 
     } catch (error) {
       console.error(error);
@@ -38,7 +37,7 @@ export default function Home() {
     }
   }
   
-  console.log("image",data[0]); 
+  console.log("image",data); 
   
   useEffect(()=>{
     fetchData()
@@ -57,7 +56,9 @@ export default function Home() {
       >
 
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <Image source={ `http://127.0.0.1:9988/image/${item.image[0]}`  } resizeMode='center'  style={{width: 131, height: 142}} />
+            {data && <Image 
+            source={ `http://127.0.0.1:9988/image/${item.image}` }
+            resizeMode='center'  style={{width: 131, height: 142}} />}
             
               <Text style={styles.title}>{item.name}</Text>
         </View>
@@ -80,6 +81,7 @@ return (
         numColumns={numColumns}
       />
     )}
+
   </View>
 )  
 
