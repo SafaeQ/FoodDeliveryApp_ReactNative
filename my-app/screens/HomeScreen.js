@@ -18,7 +18,7 @@ export default function Home() {
   const fetchData = async () => {
 
     try {
-      const response = await fetch('http://localhost:9988/repast', {
+      const response = await fetch('http://127.0.0.1:9988/repast', {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -57,7 +57,7 @@ export default function Home() {
       >
 
         <View style={[styles.innerContainer, { backgroundColor: 'white' }]}>
-            <Image source={ `http://localhost:9988/image/${item.image[0]}`  } resizeMode='center'  style={{width: 131, height: 142}} />
+            <Image source={ `http://127.0.0.1:9988/image/${item.image[0]}`  } resizeMode='center'  style={{width: 131, height: 142}} />
             
               <Text style={styles.title}>{item.name}</Text>
         </View>
