@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, FlatList, Dimensions, ActivityIndicator, Pressa
 import { basic, form} from "../constants/style";
 
 
-const numColumns = 2;
+const numColumns = 1;
 
 
 export default function Home() {
