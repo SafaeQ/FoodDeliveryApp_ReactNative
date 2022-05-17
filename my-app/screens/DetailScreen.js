@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet } from 'react-native-web';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native-web';
 
 
 
@@ -10,6 +10,10 @@ function Detail() {
             resizeMode="contain" style={styles.rootScreen}>
                 
             </ImageBackground>
+
+            <View style={styles.textContainer}>
+                <Text style={styles.text} > Food </Text>
+            </View>
         </>
      );
 }
@@ -28,6 +32,11 @@ const styles = StyleSheet.create({
       top: 10,
       justifyContent: 'space-between',
       paddingHorizontal: 50,
+    },
+    text: {
+        fontSize: 32,
+        fontWeight: 'bold', 
+        textAlign: 'center'
     },
     buttonInnerContainer: {
       top: -49,
