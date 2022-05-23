@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
 
@@ -9,7 +9,13 @@ function Detail() {
     const [loading, setLoading] = useState(true);
 
     const fetchData = async () => {
-        const resp = await fetch('http://127.0.0.1:9988/repast');
+        const resp = await fetch('http://127.0.0.1:9988/repast', {
+          method: 'GET',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          }, 
+        });
 
         const data = await resp.json();
 
@@ -31,18 +37,19 @@ function Detail() {
             resizeMode="contain" style={styles.rootScreen}/>
         
             </View>
-
+            {loading && <Box>Loading..</Box>}
+            
             <View style={styles.textContainer}>
-                <Text style={styles.text}> Food </Text>
+                <Text style={styles.text}> {detail.name} </Text>
             </View>
 
             <View style={styles.subText}>
-                <Text style={styles.texting}> Price: </Text>
-                <Text style={styles.texting}> Category:  </Text>
+                <Text style={styles.texting}> Price: {detail.price} </Text>
+                <Text style={styles.texting}> Category: {detail.category} </Text>
             </View>
 
             <View>
-                <Text style={styles.paragraph}> Create React App doesn’t handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. </Text>
+                <Text style={styles.paragraph}> {detail.description} </Text>
             </View>
         </View>
 
