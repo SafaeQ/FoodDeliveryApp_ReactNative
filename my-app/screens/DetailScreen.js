@@ -1,5 +1,5 @@
 import React, { useState , useEffect} from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View , ActivityIndicator} from 'react-native';
 
 
 
@@ -20,7 +20,7 @@ function Detail() {
         const data = await resp.json();
 
         setDetail(data);
-        // console.log('jsonnn ',json[0].image);
+        console.log('jsonnn ', data[0].category);
         setLoading(false)
     }
     
@@ -37,7 +37,7 @@ function Detail() {
             resizeMode="contain" style={styles.rootScreen}/>
         
             </View>
-            {loading && <Box>Loading..</Box>}
+            {loading && <ActivityIndicator/>}
             
             <View style={styles.textContainer}>
                 <Text style={styles.text}> {detail.name} </Text>
