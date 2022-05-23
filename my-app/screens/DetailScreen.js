@@ -4,8 +4,23 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 
 
 function Detail() {
-    // const [detail, setDetail] = useState(initialState);
 
+    const [detail, setDetail] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const fetchData = async () => {
+        const resp = await fetch('http://127.0.0.1:9988/repast');
+
+        const data = await resp.json();
+
+        setDetail(data);
+        // console.log('jsonnn ',json[0].image);
+        setLoading(false)
+    }
+    
+    useEffect(()=>{
+      fetchData()
+  },[])
 
     return ( 
         <>
