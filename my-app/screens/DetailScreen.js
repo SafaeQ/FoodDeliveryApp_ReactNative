@@ -1,8 +1,12 @@
-import { Image, StyleSheet, Text, View } from 'react-native-web';
+import React, { useState } from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 
 
 function Detail() {
+    // const [detail, setDetail] = useState(initialState);
+
+
     return ( 
         <>
         <View>
@@ -17,9 +21,9 @@ function Detail() {
                 <Text style={styles.text}> Food </Text>
             </View>
 
-            <View style={styles.textContainer}>
-                <Text> Price </Text>
-                <Text> Price </Text>
+            <View style={styles.subText}>
+                <Text style={styles.texting}> Price: </Text>
+                <Text style={styles.texting}> Category:  </Text>
             </View>
 
             <View>
@@ -45,7 +49,13 @@ const styles = StyleSheet.create({
       top: 10,
       justifyContent: 'space-between',
       paddingHorizontal: 50,
-      
+    },
+    subText: {
+      flex: 1,
+      top: 10,
+      justifyContent: 'space-between',
+      paddingHorizontal: 50,
+      flexDirection: "row"
     },
     text: {
       fontSize: 32,
@@ -53,10 +63,16 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       lineHeight: 80,
     },
+    texting: {
+      fontSize: 21,
+      display: 'inline-block',
+      lineHeight: 40,
+    },
     paragraph: {
       textAlign: 'center',
       fontStyle: 'italic',
       fontSize: 20,
+      
     },
     buttonInnerContainer: {
       top: -49,
