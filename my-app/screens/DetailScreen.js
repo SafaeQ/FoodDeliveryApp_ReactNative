@@ -17,6 +17,11 @@ function Detail() {
                 <Text style={styles.text}> Food </Text>
             </View>
 
+            <View style={styles.textContainer}>
+                <Text> Price </Text>
+                <Text> Price </Text>
+            </View>
+
             <View>
                 <Text style={styles.paragraph}> Create React App doesn’t handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. </Text>
             </View>
@@ -40,17 +45,18 @@ const styles = StyleSheet.create({
       top: 10,
       justifyContent: 'space-between',
       paddingHorizontal: 50,
+      
     },
     text: {
-        fontSize: 32,
-        fontWeight: 'bold', 
-        textAlign: 'center'
+      fontSize: 32,
+      fontWeight: 'bold', 
+      textAlign: 'center',
+      lineHeight: 80,
     },
     paragraph: {
-        textAlign: 'center',
-        // fontWeight: 'bold',
-        fontStyle: 'italic',
-        fontSize: 20,
+      textAlign: 'center',
+      fontStyle: 'italic',
+      fontSize: 20,
     },
     buttonInnerContainer: {
       top: -49,
