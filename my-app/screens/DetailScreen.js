@@ -23,10 +23,10 @@ function Detail() {
         console.log('jsonnn ', data[0].category);
         setLoading(false)
     }
-    
     useEffect(()=>{
       fetchData()
-  },[])
+    },[])
+    console.log(detail[0]);
 
     return ( 
         <>
@@ -41,6 +41,7 @@ function Detail() {
             
             <View style={styles.textContainer}>
                 <Text style={styles.text}> {detail.name} </Text>
+                
             </View>
 
             <View style={styles.subText}>
