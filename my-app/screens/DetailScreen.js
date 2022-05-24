@@ -5,7 +5,7 @@ import { Image, StyleSheet, Text, View , ActivityIndicator} from 'react-native';
 
 function Detail() {
 
-    const [detail, setDetail] = useState([]);
+    const [detail, setDetail] = useState({});
     const [loading, setLoading] = useState(true);
 
     const fetchData = async () => {
@@ -17,16 +17,17 @@ function Detail() {
           },
         });
 
-        const data = await resp.json();
+        const data = await resp.json()
 
-        setDetail(data);
-        console.log('jsonnn ', data[0].category);
+        setDetail(prev => data[0]);
+        
         setLoading(false)
-    }
+        
+        return data
+      }
     useEffect(()=>{
       fetchData()
     },[])
-    console.log(detail[0]);
 
     return ( 
         <>
