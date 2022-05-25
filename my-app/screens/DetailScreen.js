@@ -22,7 +22,7 @@ function Detail() {
         setDetail(prev => data[0]);
         
         setLoading(false)
-        
+
         return data
       }
     useEffect(()=>{
@@ -46,8 +46,8 @@ function Detail() {
             </View>
 
             <View style={styles.subText}>
-                <Text style={styles.texting}> Price: {detail.price} </Text>
-                <Text style={styles.texting}> Category: {detail.category} </Text>
+                <Text style={styles.texting}> Category:  {detail.category} </Text>
+                <Text style={styles.texting}> Price:  {detail.price} </Text>
             </View>
 
             <View>
