@@ -26,7 +26,7 @@ export default function Home() {
         }, 
       });
       const json = await response.json();
-      // console.log('jsonnn ',json[0].image);
+      
       setData(json);
 
     } catch (error) {
