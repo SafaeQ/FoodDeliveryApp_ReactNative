@@ -71,12 +71,6 @@ function Navigation () {
                     )
                 }
             })}
-            // screenOptions={{ 
-            //     activeTintColor: 'lightseagreen',
-            //     inactiveTintColor: 'grey',
-            //     labelStyle: {fontSize: 16},
-            //     style:{width: fullScreenWidth}
-            //  }}
             >
                 <Tab.Screen name="Home" component={HomeStackScreen} />
                 <Tab.Screen name="Profile" component={ProfileStackScreen} />
