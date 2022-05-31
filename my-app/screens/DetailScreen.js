@@ -48,7 +48,7 @@ function Detail() {
             <View style={styles.subText}>
               
 
-                <Badge style={styles.texting}> Category:  {detail.category} </Badge>
+                <Text style={styles.texting}> Category:  {detail.category} </Text>
                 <Text style={styles.texting}> Price:  {detail.price} </Text>
             </View>
 
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold', 
       textAlign: 'center',
       lineHeight: 80,
+      
     },
     texting: {
       fontSize: 21,
