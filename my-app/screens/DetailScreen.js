@@ -1,6 +1,6 @@
 import React, { useState , useEffect} from 'react';
 import { Image, StyleSheet, Text, View , ActivityIndicator} from 'react-native';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { Avatar, Button, Card, Title, Paragraph, Badge } from 'react-native-paper';
 
 
 function Detail() {
@@ -33,7 +33,7 @@ function Detail() {
         <>
         <View>
             <View>
-            <Image source= { require('../assets/images/images.jpg') } 
+            <Image source= { `http://127.0.0.1:9988/image/${detail.image}` } 
             
             resizeMode="contain" style={styles.rootScreen}/>
         
@@ -48,7 +48,7 @@ function Detail() {
             <View style={styles.subText}>
               
 
-                <Text style={styles.texting}> Category:  {detail.category} </Text>
+                <Badge style={styles.texting}> Category:  {detail.category} </Badge>
                 <Text style={styles.texting}> Price:  {detail.price} </Text>
             </View>
 
