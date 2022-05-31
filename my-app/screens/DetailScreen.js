@@ -1,6 +1,6 @@
 import React, { useState , useEffect} from 'react';
 import { Image, StyleSheet, Text, View , ActivityIndicator} from 'react-native';
-
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 
 
 function Detail() {
@@ -41,17 +41,23 @@ function Detail() {
             {loading && <ActivityIndicator/>}
             
             <View style={styles.textContainer}>
-                <Text style={styles.text}> {detail.name} </Text>
+                <Title style={styles.text}> {detail.name} </Title>
                 
             </View>
 
             <View style={styles.subText}>
+              
+
                 <Text style={styles.texting}> Category:  {detail.category} </Text>
                 <Text style={styles.texting}> Price:  {detail.price} </Text>
             </View>
 
-            <View>
-                <Text style={styles.paragraph}> {detail.description} </Text>
+            <View style={styles.paraContainer}>
+              <Card>
+                <Card.Content>
+                  <Paragraph style={styles.paragraph}>{detail.description}</Paragraph>
+                </Card.Content>
+              </Card>
             </View>
         </View>
 
@@ -78,8 +84,9 @@ const styles = StyleSheet.create({
       flex: 1,
       top: 10,
       justifyContent: 'space-between',
-      paddingHorizontal: 50,
-      flexDirection: "row"
+      paddingHorizontal: 20,
+      flexDirection: "row",
+      
     },
     text: {
       fontSize: 32,
@@ -90,13 +97,18 @@ const styles = StyleSheet.create({
     texting: {
       fontSize: 21,
       display: 'inline-block',
-      lineHeight: 40,
+      lineHeight: 30,
     },
     paragraph: {
       textAlign: 'center',
-      fontStyle: 'italic',
+      fontStyle: 'normal',
       fontSize: 20,
       
+    },
+    paraContainer: {
+      flex: 1,
+      justifyContent: 'space-around',
+      paddingHorizontal: 30,
     },
     buttonInnerContainer: {
       top: -49,
