@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View, FlatList, Dimensions, ActivityIndicator, Pressable, Image } from 'react-native';
 
 //  styles
@@ -44,15 +45,20 @@ export default function Home( {navigation: { navigate }} ) {
 },[])
 
 
+
+
+const handleSubmit = () => {
+  const navigation = useNavigation();
+  navigation.navigate('Detail')
+  // navigate("Detail")
+  }
+
  const renderItem = ({ item }) => {    
     return (
       <>
       <View style={styles.gridItem} >
       <Pressable
-        onPress={() => {
-          console.log('sdsd');
-          navigate("Detail")
-        }}
+        onPress={ handleSubmit }
         style={({ pressed }) => [
           styles.button,
           pressed ? styles.buttonPressed : null,
