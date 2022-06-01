@@ -60,7 +60,6 @@ function Detail() {
               </Card>
             </View>
         </View>
-
         </>
      );
 }
