@@ -49,9 +49,13 @@ export default function Home( {navigation: { navigate }} ) {
       <>
       <View style={styles.gridItem} >
       <Pressable
+        onPress={() => {
+          console.log('sdsd');
+          navigate("Detail")
+        }}
         style={({ pressed }) => [
           styles.button,
-          pressed ? styles.buttonPressed : navigate("Detail"),
+          pressed ? styles.buttonPressed : null,
         ]}      
       >
 

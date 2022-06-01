@@ -12,6 +12,7 @@ import IonicIcon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import AboutScreen from '../screens/AboutScreen';
+import DetailScreen from '../screens/DetailScreen';
 import  {Text, Dimensions}  from 'react-native';
 
 const fullScreenWidth = Dimensions.get('window').width
@@ -39,6 +40,14 @@ function AboutStackScreen() {
     return(
         <Stack.Navigator>
             <Stack.Screen name= "AboutScreen" component={AboutScreen} options={{ headerShown: false }}/>
+        </Stack.Navigator>
+    )
+}
+
+function DetailStackScreen() {
+    return(
+        <Stack.Navigator>
+            <Stack.Screen name= "DetailScreen" component={DetailScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }
