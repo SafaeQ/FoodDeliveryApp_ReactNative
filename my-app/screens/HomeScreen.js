@@ -9,7 +9,7 @@ import { basic, form} from "../constants/style";
 const numColumns = 1;
 
 
-export default function Home() {
+export default function Home( {navigation: { navigate }} ) {
 
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState();
@@ -51,7 +51,7 @@ export default function Home() {
       <Pressable
         style={({ pressed }) => [
           styles.button,
-          pressed ? styles.buttonPressed : null,
+          pressed ? styles.buttonPressed : navigate("Detail"),
         ]}      
       >
 
