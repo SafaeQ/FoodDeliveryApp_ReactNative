@@ -44,13 +44,13 @@ function AboutStackScreen() {
     )
 }
 
-function DetailStackScreen() {
-    return(
-        <Stack.Navigator>
-            <Stack.Screen name= "DetailScreen" component={Detail} options={{ headerShown: false }}/>
-        </Stack.Navigator>
-    )
-}
+// function DetailStackScreen() {
+//     return(
+//         <Stack.Navigator>
+//             <Stack.Screen name= "Detail" component={Detail} options={{ headerShown: false }}/>
+//         </Stack.Navigator>
+//     )
+// }
 
 
 const Tab = createBottomTabNavigator();
@@ -84,7 +84,6 @@ function Navigation () {
                 <Tab.Screen name="Home" component={HomeStackScreen} />
                 <Tab.Screen name="Profile" component={ProfileStackScreen} />
                 <Tab.Screen name="About" component={AboutStackScreen} />
-                <Tab.Screen name="Detail" component={DetailStackScreen} />
             </Tab.Navigator>
         </>
 

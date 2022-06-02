@@ -5,12 +5,13 @@ import { StyleSheet, Text, View, FlatList, Dimensions, ActivityIndicator, Pressa
 //  styles
 
 import { basic, form} from "../constants/style";
+import DetailScreen from './DetailScreen';
 
 
 const numColumns = 1;
 
 
-export default function Home( {navigation: { navigate }} ) {
+export default function Home( {navigation} ) {
 
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState();
@@ -45,20 +46,17 @@ export default function Home( {navigation: { navigate }} ) {
 },[])
 
 
-
-
-const handleSubmit = () => {
-  const navigation = useNavigation();
-  navigation.navigate('Detail')
-  // navigate("Detail")
-  }
+// const handleSubmit = () => {
+  
+//   // navigate("Detail")
+//   }
 
  const renderItem = ({ item }) => {    
     return (
       <>
       <View style={styles.gridItem} >
       <Pressable
-        onPress={ handleSubmit }
+        onPress={() => navigation.navigate(DetailScreen)} 
         style={({ pressed }) => [
           styles.button,
           pressed ? styles.buttonPressed : null,
